@@ -23,13 +23,15 @@ namespace HelpScout.Conversations.Threads
                 {
                     req.Text,
                     req.Attachments,
-                    Customer = new {Id = customerId}
+                    Customer = new {Id = customerId},
+                    user = req.user
                 };
             else
                 data = new
                 {
                     req.Text,
-                    req.Attachments
+                    req.Attachments,
+                    user = req.user
                 };
             var response =
                 await RequestSingle<object>($"conversations/{conversationId}/{fragment}", data, HttpMethod.Post).ConfigureAwait(false);

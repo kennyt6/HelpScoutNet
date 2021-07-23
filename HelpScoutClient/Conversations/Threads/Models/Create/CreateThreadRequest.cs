@@ -6,5 +6,6 @@ namespace HelpScout.Conversations.Threads.Models.Create
     {
         public string Text { get; set; }
         public IList<Attachment> Attachments { get; set; }
+        public int? user { get; set; }
     }
 }
